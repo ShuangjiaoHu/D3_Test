@@ -1,0 +1,17 @@
+d3.select("body")
+    .style("color", "green")
+    .style("background-color", "grey");
+
+var div = document.createElement("div");
+div.innerHTML = "Hello, world!";
+document.body.appendChild(div);
+
+var data = [30, 86, 168, 281, 303, 365];
+
+d3.select(".chart")
+  .selectAll("div")
+  .data(data)
+    .enter()
+    .append("div")
+    .style("width", function(d) { return d + "px"; })
+    .text(function(d) { return d; });
